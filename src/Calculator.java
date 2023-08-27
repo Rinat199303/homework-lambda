@@ -39,7 +39,7 @@ public class Calculator implements Supplier {
     /**
      * Данный метод производит тоже самое что и сделано в нутри переменной
      * для использования этого метода можно раскоментировать этот метод
-     * и сделать value divide private и решать задание через данный метод
+     * и сделать variable divide private и решать задание через данный метод
      * @param a
      * @param b
      * @return divide1
