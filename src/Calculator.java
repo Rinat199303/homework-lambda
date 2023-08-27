@@ -8,11 +8,13 @@ public class Calculator implements Supplier {
      * @param x
      * @param y
      */
-     private BinaryOperator<Integer> plus = ((x, y) -> x + y);
-     private BinaryOperator<Integer> minus = ((x, y) -> x - y);
-     private BinaryOperator<Integer> multiply = ((x, y) -> x * y);
+     BinaryOperator<Integer> plus = ((x, y) -> x + y);
+     BinaryOperator<Integer> minus = ((x, y) -> x - y);
+     BinaryOperator<Integer> multiply = ((x, y) -> x * y);
 
-     private BinaryOperator<Integer> divide = ((x, y) -> x / y) ;
+//     private BinaryOperator<Integer> divide = (x, y) -> x / y ;
+     BinaryOperator<Integer> divide = (x,y) -> ((y == 0) ? 0 : x/y);
+
 
     /**
      * Добавляем UnaryOperator для математических операций с одним числом
@@ -33,30 +35,23 @@ public class Calculator implements Supplier {
      * создаем переменную типа Consumer для вывода println на экран
      */
     Consumer<Integer> println = System.out::println;
-    public int countPlus(int x, int y){
-        int count = plus.apply(x, y);
-        return count;
-    }
 
-    public int countMinus(int x, int y) {
-        int count = minus.apply(x, y);
-        return count;
-    }
-
-    public int countDivide(int a, int b) {
-        int divide1 = 0;
-        try{
-            divide1 = divide.apply(a, b);
-        }catch (ArithmeticException e){
-            return 0;
-        }
-        return divide1;
-    }
-    public int countMultiply(int x, int y){
-        int count = multiply.apply(x, y);
-        return count;
-    }
-
+    /**
+     * Данный метод производит тоже самое что и сделано в нутри переменной
+     * для использования этого метода можно раскоментировать этот метод
+     * и сделать value divide private и решать задание через данный метод
+     * @param a
+     * @param b
+     * @return divide1
+     */
+//    public int countDivide(int a, int b) {
+//        int divide1 = 0;
+//        try{
+//            divide1 = divide.apply(a, b);
+//        }catch (ArithmeticException e){
+//            return 0;
+//        }
+//        return divide1;
     @Override
     public Object get() {
 
