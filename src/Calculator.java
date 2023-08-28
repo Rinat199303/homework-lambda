@@ -1,6 +1,6 @@
 import java.util.function.*;
 
-public class Calculator implements Supplier {
+public class Calculator {
     static Supplier<Calculator> instance = Calculator::new;
     /**
      * Добавляем BinaryOperator переменные для математических операций используем Integer
@@ -52,11 +52,5 @@ public class Calculator implements Supplier {
 //            return 0;
 //        }
 //        return divide1;
-    @Override
-    public Object get() {
-
-        return null;
-    }
-
 
 }
